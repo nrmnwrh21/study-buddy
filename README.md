@@ -10,7 +10,7 @@ Study Buddy Pro is an intelligent Streamlit-based web application that helps stu
 
 It combines advanced selective extraction logic with Hugging Face transformer models for high-quality summarization and question generation.
 
-***🚀 Features***
+## 🚀 Features
 
 **🎯 Selective Extraction Control**
 
@@ -20,7 +20,7 @@ Choose how detailed your output should be:
 - 🟡 **Medium Selectivity** – Important content with support
 - 🟢 **Low Selectivity** – More detailed coverage
 
-***🧠 Smart Summarization***
+## 🧠 Smart Summarization
 
 - Uses transformer models like:
     - facebook/bart-large-cnn
@@ -29,20 +29,20 @@ Choose how detailed your output should be:
 - Automatically chunks long text
 - Falls back to intelligent extractive summarization if needed
 
-***🔎 Critical Point Identification***
+## 🔎 Critical Point Identification
 
-Enhanced scoring system that prioritizes:
+- Enhanced scoring system that prioritizes:
 
-- Definitions
-- Conclusions
-- Key concepts
-- Statistical data
-- Cause-effect relationships
-- Academic/technical terms
+    - Definitions
+    - Conclusions
+    - Key concepts
+    - Statistical data
+    - Cause-effect relationships
+    - Academic/technical terms
 
-Low-quality sentences are automatically filtered out.
+- Low-quality sentences are automatically filtered out.
 
-***📊 Downloadable Table***
+## 📊 Downloadable Table
 
 - Converts extracted key points into a structured table
 - Download as CSV for revision or sharing
@@ -56,7 +56,7 @@ Generates exam-style questions using:
 
 If AI generation fails, the app uses pattern-based intelligent question generation.
 
-***🛠 Tech Stack***
+## 🛠 Tech Stack
 
 - Frontend/UI: Streamlit
 - NLP Models: Hugging Face Transformers
@@ -66,36 +66,45 @@ If AI generation fails, the app uses pattern-based intelligent question generati
     - Seq2Seq (BART)
     - Text-to-Text (FLAN-T5)
 
-***📂 Project Structure***
+## 📂 Project Structure
 
-<img width="704" height="160" alt="image" src="https://github.com/user-attachments/assets/88ebf0d7-7208-4f1a-88c8-70eeac3e791e" />
+``` bash
+study-buddy-pro/
+│
+├── study-buddy-2.0.py     # Main Streamlit application
+├── README.md              # Project documentation
+└── requirements.txt       # Required Python packages
+```
 
-***⚙️ Installation***
+## ⚙️ Installation
 
 **1️⃣ Clone the repository**
 
-<img width="738" height="61" alt="image" src="https://github.com/user-attachments/assets/e37a1bf5-7990-4742-8c4b-2bb33f342a45" />
+git clone https://github.com/nrmnwrh21/study-buddy-pro.git
+
+cd study-buddy-pro
 
 **2️⃣ Create virtual environment (recommended)**
 
-<img width="464" height="98" alt="image" src="https://github.com/user-attachments/assets/dd3ceb71-3cf1-406a-a21d-bef59fa4e8cb" />
+python -m venv venv
+
+source venv/bin/activate   # Mac/Linux
+
+venv\Scripts\activate      # Windows
+
 
 **3️⃣ Install dependencies**
 
-<img width="396" height="30" alt="image" src="https://github.com/user-attachments/assets/4527477f-5efb-41a0-a6ef-ef089dcca40d" />
+pip install streamlit transformers torch pandas pypdf
 
-If you don’t have a requirements.txt, install manually:
-
-<img width="645" height="31" alt="image" src="https://github.com/user-attachments/assets/91f4cf9d-2c7e-4f15-832a-62e61b78c7bd" />
-
-***▶️ Run the App***
+## ▶️ Run the App
 streamlit run study-buddy-2.0.py
 
 The app will open in your browser at:
 
 http://localhost:XXXX
 
-***📘 How to Use***
+## 📘 How to Use
 
 1. Choose input type:
     - Paste text
@@ -112,7 +121,7 @@ http://localhost:XXXX
     - 📊 Table
     - ❓ Quiz
 
-***🧠 Smart Extraction Logic***
+## 🧠 Smart Extraction Logic
 
 The system evaluates sentences based on:
 
@@ -125,7 +134,7 @@ The system evaluates sentences based on:
 
 Only high-scoring sentences are selected.
 
-***💡 Best Use Cases***
+## 💡 Best Use Cases
 
 - University lecture notes
 - Research articles
@@ -133,13 +142,13 @@ Only high-scoring sentences are selected.
 - Exam revision material
 - Academic PDF textbooks
 
-***🔐 Offline Processing***
+## 🔐 Offline Processing
 
 - All processing runs locally
 - No external API calls required
 - Hugging Face models are downloaded once and cached
 
-***📈 Future Improvements***
+## 📈 Future Improvements
 
 - Save session history
 - Export to PDF
