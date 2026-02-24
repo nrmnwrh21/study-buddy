@@ -1,76 +1,148 @@
-# study-buddy
-AI-powered study assistant that summarizes notes, extracts key points, and generates quiz questions using transformer-based NLP models.
+# Study Buddy Pro
+**Selective - Smart - Precise AI Study Assistant**
 
-***📌 Project Overview***
+Study Buddy Pro is an intelligent Streamlit-based web application that helps students transform notes, articles, and PDFs into:
 
-Study Buddy is an AI-based learning assistant designed to help students study more effectively.
-The system uses Natural Language Processing (NLP) techniques to:
+- Smart summaries
+- High-quality key points
+- Downloadable critical point tables
+- AI-generated study questions
 
-- Summarize long study materials
-- Extract key points from text
-- Organize information into structured tables
-- Generate quiz questions for self-assessment
-
-This project demonstrates the practical use of transformer-based language models for academic assistance.
+It combines advanced selective extraction logic with Hugging Face transformer models for high-quality summarization and question generation.
 
 ***🚀 Features***
 
-**🧠 Text Summarization**
+**🎯 Selective Extraction Control**
 
-Generates concise summaries from lengthy notes or articles.
+Choose how detailed your output should be:
 
-**🔎 Key Point Extraction**
+- 🔵 **High Selectivity** – Only the most critical points
+- 🟡 **Medium Selectivity** – Important content with support
+- 🟢 **Low Selectivity** – More detailed coverage
 
-Identifies and ranks important sentences from study materials.
+***🧠 Smart Summarization***
 
-**📊 Automatic Table Generation**
+- Uses transformer models like:
+    - facebook/bart-large-cnn
+    - sshleifer/distilbart-cnn-12-6
 
-Converts extracted key points into a structured, downloadable table
+- Automatically chunks long text
+- Falls back to intelligent extractive summarization if needed
 
-**❓ AI Quiz Generator**
+***🔎 Critical Point Identification***
 
-Automatically generates practice questions based on the content.
+Enhanced scoring system that prioritizes:
 
-**📄 PDF Upload Support**
+- Definitions
+- Conclusions
+- Key concepts
+- Statistical data
+- Cause-effect relationships
+- Academic/technical terms
 
-Extracts text from uploaded PDF files (text-based PDFs)
+Low-quality sentences are automatically filtered out.
 
-***🛠 Technologies Used***
-- Python
-- Streamlit (Web Interface)
-- Hugging Face Transformers
-    - facebook/bart-large-cnn (Summarization)
-    - valhalla/t5-small-qg-prepend (Question Generation)
-- Pytorch
-- Pandas
-- PyPDF
+***📊 Downloadable Table***
 
-***🧠 How It Works***
-1. User inputs study text or uploads a PDF
-2. The summarization model condenses the content
-3. Important sentences are extracted using heuristic ranking
-4. A question-generation model produces quiz questions
-5. Results are displayed in an interactive web interface
+- Converts extracted key points into a structured table
+- Download as CSV for revision or sharing
+  
+***❓ Smart Quiz Generator***
 
-***💻 Installation***
+Generates exam-style questions using:
 
-<img width="904" height="97" alt="image" src="https://github.com/user-attachments/assets/dd6e7fc1-8b32-4627-9eed-232eef1e0767" />
+- google/flan-t5-base
+- google/flan-t5-small
 
-Run the app:
+If AI generation fails, the app uses pattern-based intelligent question generation.
 
-<img width="517" height="66" alt="image" src="https://github.com/user-attachments/assets/86c3e1ac-15af-4264-93f7-19e64f52264c" />
+***🛠 Tech Stack***
 
-After running the app, you need to open it in a browser 
+- Frontend/UI: Streamlit
+- NLP Models: Hugging Face Transformers
+- PDF Processing: PyPDF
+- Data Handling: Pandas
+- Language Model Types:
+    - Seq2Seq (BART)
+    - Text-to-Text (FLAN-T5)
+
+***📂 Project Structure***
+
+<img width="704" height="160" alt="image" src="https://github.com/user-attachments/assets/88ebf0d7-7208-4f1a-88c8-70eeac3e791e" />
+
+***⚙️ Installation***
+
+**1️⃣ Clone the repository**
+
+<img width="738" height="61" alt="image" src="https://github.com/user-attachments/assets/e37a1bf5-7990-4742-8c4b-2bb33f342a45" />
+
+**2️⃣ Create virtual environment (recommended)**
+
+<img width="464" height="98" alt="image" src="https://github.com/user-attachments/assets/dd3ceb71-3cf1-406a-a21d-bef59fa4e8cb" />
+
+**3️⃣ Install dependencies**
+
+<img width="396" height="30" alt="image" src="https://github.com/user-attachments/assets/4527477f-5efb-41a0-a6ef-ef089dcca40d" />
+
+If you don’t have a requirements.txt, install manually:
+
+<img width="645" height="31" alt="image" src="https://github.com/user-attachments/assets/91f4cf9d-2c7e-4f15-832a-62e61b78c7bd" />
+
+***▶️ Run the App***
+streamlit run study-buddy-2.0.py
+
+The app will open in your browser at:
 
 http://localhost:XXXX
 
-***🎯 Purpose of the Project***
+***📘 How to Use***
 
-This project was developed as part of my exploration of learning in AI and Natural Language Processing. It showcases how transformers models can be applied to enhance learning efficiency and support research activity.
+1. Choose input type:
+    - Paste text
+    - Upload text-based PDF
 
-***📌 Future Improvements***
-- Multiple-choice question (MCQ) generation with answers
-- Chat-based interactive Q&A
-- Citation generation
-- Database storage of study sessions
-- Model optimization for faster inference
+2. Select:
+    - Summarization model
+    - Question generation model
+    - Selectivity level
+
+3. Click:
+    - 🧠 Summarize
+    - 🔎 Key Points
+    - 📊 Table
+    - ❓ Quiz
+
+***🧠 Smart Extraction Logic***
+
+The system evaluates sentences based on:
+
+- Information density
+- Keyword importance categories
+- Statistical indicators
+- Sentence coherence
+- Technical vocabulary presence
+- Position in document
+
+Only high-scoring sentences are selected.
+
+***💡 Best Use Cases***
+
+- University lecture notes
+- Research articles
+- Technical documentation
+- Exam revision material
+- Academic PDF textbooks
+
+***🔐 Offline Processing***
+
+- All processing runs locally
+- No external API calls required
+- Hugging Face models are downloaded once and cached
+
+***📈 Future Improvements***
+
+- Save session history
+- Export to PDF
+- Flashcard generation
+- Highlight important sections in original text
+- Deployment with Docker
